@@ -91,11 +91,11 @@ class App extends Component {
             <h1>React aplikacija za razgovor, Antun Horvat</h1>
          </header> : ""}
          
-         {/* <UnosKorisnika/> */}
+         <UnosKorisnika/>
 
           
-          <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>
-          <Unos saljiPoruku={this.saljiPoruku}/>
+          {/* <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>
+          <Unos saljiPoruku={this.saljiPoruku}/> */}
           </div>
           )}
     

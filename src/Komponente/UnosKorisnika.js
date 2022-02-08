@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FormControl, FormLabel, FormText } from "react-bootstrap";
-import { Col, Row, Form } from "react-bootstrap";
+// import { FormControl, FormLabel, FormText } from "react-bootstrap";
+// import { Col, Row, Form } from "react-bootstrap";
 
 function UnosKorisnika(props){
 
@@ -13,16 +13,19 @@ function UnosKorisnika(props){
 
     const handleUsername = event => {
         setKorisnickoIme(event.target.value);
+        console.log(korisnickoIme)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(korisnickaBoja, korisnickoIme);
     }
+
+
     return (
         <div className= "container-korPodaci">
              <form id="unosKorPodataka" onSubmit={handleSubmit}>    
-                <input onChange={handleUsername} type="text" id="korisnickoIme"/>
+                <input onChange={handleUsername} type="text" value={korisnickoIme} id="korisnickoIme"/>
                 <br/>
                 <br/>
                 <input onChange={handleColor} type="color" id="korisnickaBoja"/>
