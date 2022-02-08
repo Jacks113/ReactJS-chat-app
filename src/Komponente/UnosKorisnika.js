@@ -5,7 +5,7 @@ import { useState } from "react";
 function UnosKorisnika(props){
 
     const [korisnickoIme, setKorisnickoIme] = useState("");
-    const [korisnickaBoja, setKorisnickaBoja] = useState("");
+    const [korisnickaBoja, setKorisnickaBoja] = useState("#ffffff");
 
     const handleColor = event => {
         setKorisnickaBoja(event.target.value);

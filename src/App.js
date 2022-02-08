@@ -115,6 +115,10 @@ class App extends Component {
       // console.log(this.state.messages)
       // console.log("korisnik kod slanja: ", this.state.member)
     };
+
+    promjenaBojeImena = (boja, ime) => {
+      this.setState({...this.state.member, imeKorisnika:ime, bojaKorisnika:boja})
+    }
     
   
 
