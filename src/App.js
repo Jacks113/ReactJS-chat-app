@@ -17,11 +17,18 @@ function imeKorisnika(){
 
 // definicija funkcije za postavljanje nasumicnog izbora boja
 function bojaKorisnika() {
-  var boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-  if (boja === "#FFFFFF"){
-    boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  // var boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  // if (boja === "#FFFFFF"){
+  //   boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  // }
+
+  // var ikona = [<FontAwesomeIcon icon="fa-solid fa-user-astronaut" />]
+
+  var boja = "\\ikone-korisnika\\" + Math.floor(Math.random() * 5).toString() + ".svg"
+  if (boja === "0.svg"){
+    boja = "\\ikone-korisnika\\1.svg"
   }
-  return boja;
+  return boja
 }
 
 class App extends Component {
@@ -30,7 +37,7 @@ class App extends Component {
     messages: [],
     member: {
       imeKorisnika: imeKorisnika(),
-      boja: bojaKorisnika(),
+      boja: bojaKorisnika() 
     }
 
   };
@@ -91,11 +98,11 @@ class App extends Component {
             <h1>React aplikacija za razgovor, Antun Horvat</h1>
          </header> : ""}
          
-         <UnosKorisnika/>
+         {/* <UnosKorisnika promjenaKorPodataka = {this.promjenaBojeImena}/> */}
 
           
-          {/* <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>
-          <Unos saljiPoruku={this.saljiPoruku}/> */}
+          <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>
+          <Unos saljiPoruku={this.saljiPoruku}/>
           </div>
           )}
     
@@ -116,9 +123,10 @@ class App extends Component {
       // console.log("korisnik kod slanja: ", this.state.member)
     };
 
-    promjenaBojeImena = (boja, ime) => {
-      this.setState({...this.state.member, imeKorisnika:ime, bojaKorisnika:boja})
-    }
+    // promjenaBojeImena = (boja, ime) => {
+    //   this.setState({...this.state.member, imeKorisnika:ime, bojaKorisnika:boja})
+    //   console.log(this.state.member);
+    // }
     
   
 

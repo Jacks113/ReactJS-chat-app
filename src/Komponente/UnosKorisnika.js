@@ -4,21 +4,27 @@ import { useState } from "react";
 
 function UnosKorisnika(props){
 
+    const {promjenaKorPodataka} = props;
     const [korisnickoIme, setKorisnickoIme] = useState("");
-    const [korisnickaBoja, setKorisnickaBoja] = useState("#ffffff");
+    const [korisnickaBoja, setKorisnickaBoja] = useState("");
 
     const handleColor = event => {
-        setKorisnickaBoja(event.target.value);
+        setKorisnickaBoja(event.target.value.toString());
     }
 
     const handleUsername = event => {
-        setKorisnickoIme(event.target.value);
+        setKorisnickoIme(event.target.value.toString());
         console.log(korisnickoIme)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (korisnickaBoja !== "" && korisnickoIme !== "")
         console.log(korisnickaBoja, korisnickoIme);
+        promjenaKorPodataka(korisnickaBoja, korisnickoIme)
+        setKorisnickaBoja("");
+        setKorisnickoIme("");
     }
 
 

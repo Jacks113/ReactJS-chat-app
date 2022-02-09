@@ -74,9 +74,15 @@ body{
 /* stilovi za ikonu, profilnu sliku korisnika koji je poslao poruku */
 
 .ikona{
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
+  display: block;
+}
+
+.ikona img{
+  height: 100%;
+  width: 100%;
 }
 
 .poruka-align-right .ikona{
@@ -155,6 +161,7 @@ body{
   z-index: 5;
   width: 90%;
   height: 5%;
+  padding-bottom: 2em;
   /* margin-top: 20%; */
   display: flex;
   flex-direction: row;
@@ -204,11 +211,6 @@ body{
   transform: scale(1.1);
 }
 
-/* @media only screen and (max-height: 600px){
-  .form-Input{
-    height: 20%;
-  }
-} */
 
 @media only screen and (min-width: 2000px){
   /* body velicina fonta i polje za unos poruke */
@@ -236,15 +238,15 @@ body{
       .form-Input{
         height: 20%;
       }
-
-      .form-Input button {
-        height: 100%;  }
     }
+    
+  
 }
 
 
 
 @media only screen and (max-width: 1000px){
+
   /* body velicina fonta i gumb za slanje poruke */
   body {
     font-size: 1vw;

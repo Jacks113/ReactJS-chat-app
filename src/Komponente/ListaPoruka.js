@@ -8,7 +8,8 @@ class ListaPoruka extends Component{
         
         // definiranje vrijednosti stanja poruke, korisnika iz props-a
         const { poruke, korisnik } = this.props;
-                    
+
+
         return(
             <ul className="spremnikPoruka">
                 
@@ -18,7 +19,7 @@ class ListaPoruka extends Component{
 
                         const {member, text} = poruka; //Dohvaćanje vrijednosti member objekta i teksta poruke unutar objekta koji servis vraca
 
-                        if (poruka.member.clientData.imeKorisnika=== korisnik.imeKorisnika){
+                        if (member.clientData.imeKorisnika === korisnik.imeKorisnika){
                             // console.log("Korisnik je isti: ", member.clientData.imeKorisnika);
 
                             //  vracanje elementa liste s vrijednosti poruke
@@ -29,23 +30,26 @@ class ListaPoruka extends Component{
                                         <h4>{member.clientData.imeKorisnika}</h4>
                                         <p>{text}</p>
                                     </div>
-                                    <span className="ikona" style={{backgroundColor: member.clientData.boja}}/>
+                                    <span className="ikona">
+                                        <img src={member.clientData.boja} alt="user-icon"/>
+                                    </span>
                                 </li>
                             )
                         }
                         
-                        else if (member.clientData.imeKorisnika !== korisnik.imeKorisnika){
+                        else {
                             // console.log("Korisnik nije isti: ", member.clientData.imeKorisnika)
                            
                             //  vracanje elementa liste s vrijednosti poruke
                             return (
                                 <li key={index} className="poruka-align-left poruka" >
-                                  <span className="ikona" style={{backgroundColor: member.clientData.boja}}/>
+                                  <span className="ikona">
+                                        <img src={member.clientData.boja} alt="user-icon" />
+                                    </span>
                                     <div className="sadrzaj">
                                         <h4>{member.clientData.imeKorisnika}</h4>
                                         <p>{text}</p>
                                     </div>
-                                    <span className="ikona" style={{backgroundColor:poruka.boja}}/>
                                     
                                 </li>
                             )
