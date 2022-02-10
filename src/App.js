@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import UnosKorisnika from './Komponente/UnosKorisnika';
+// import UnosKorisnika from './Komponente/UnosKorisnika';
 import ListaPoruka from './Komponente/ListaPoruka';
 import Unos from './Komponente/Unos';
 
@@ -24,10 +24,8 @@ function bojaKorisnika() {
 
   // var ikona = [<FontAwesomeIcon icon="fa-solid fa-user-astronaut" />]
 
-  var boja = "\\ikone-korisnika\\" + Math.floor(Math.random() * 5).toString() + ".svg"
-  if (boja === "0.svg"){
-    boja = "\\ikone-korisnika\\1.svg"
-  }
+  var ikone = ["\\ikone-korisnika\\1.svg","\\ikone-korisnika\\2.svg", "\\ikone-korisnika\\3.svg", "\\ikone-korisnika\\4.svg", "\\ikone-korisnika\\5.svg"]
+  var boja = ikone[Math.floor(Math.random() * 5)]
   return boja
 }
 

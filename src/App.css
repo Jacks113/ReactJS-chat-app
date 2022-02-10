@@ -41,12 +41,31 @@ body{
 /* spremnik poruka, glavni stilovi za izgled */
 
 .spremnikPoruka{
+  padding: 0.5em;
   margin:2% 0;
   width: 65%;
   height: 77%;
   overflow: auto;
   /* background-color: lightskyblue; */
   border-radius: 10px;
+}
+
+.spremnikPoruka {
+  scrollbar-width: thin;
+  scrollbar-color: lightgray #a19a9a; 
+}
+
+/* Works on Chrome, Edge, and Safari */
+.spremnikPoruka::-webkit-scrollbar {
+  width: 8px;
+  background-color: #a19a9a;
+  border-radius: 10px;
+}
+
+
+.spremnikPoruka::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 20px;
 }
 
 /* spremnik zasebne poruke */
@@ -64,6 +83,7 @@ body{
 .poruka-align-right{
   display: flex;
   justify-content: flex-end;
+  padding-right: 0.8em;
 }
 
 .poruka-align-left{
