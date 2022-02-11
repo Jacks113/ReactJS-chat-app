@@ -15,18 +15,12 @@ function imeKorisnika(){
   return pridjevi[Math.floor(Math.random() * pridjevi.length)] + imenice[Math.floor(Math.random() * imenice.length)];
 }
 
-// definicija funkcije za postavljanje nasumicnog izbora boja
-function bojaKorisnika() {
-  // var boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-  // if (boja === "#FFFFFF"){
-  //   boja = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-  // }
-
-  // var ikona = [<FontAwesomeIcon icon="fa-solid fa-user-astronaut" />]
-
-  var ikone = ["\\ikone-korisnika\\1.svg","\\ikone-korisnika\\2.svg", "\\ikone-korisnika\\3.svg", "\\ikone-korisnika\\4.svg", "\\ikone-korisnika\\5.svg"]
-  var boja = ikone[Math.floor(Math.random() * 5)]
-  return boja
+// definicija funkcije za postavljanje nasumicnog izbora ikone korisnika
+function ikonaKorisnika() {
+ 
+  var ikone = ["\\ikone-korisnika\\1.svg","\\ikone-korisnika\\2.svg", "\\ikone-korisnika\\3.svg", "\\ikone-korisnika\\4.svg", "\\ikone-korisnika\\5.svg"];
+  var ikona = ikone[Math.floor(Math.random() * 5)];
+  return ikona;
 }
 
 class App extends Component {
@@ -35,13 +29,11 @@ class App extends Component {
     messages: [],
     member: {
       imeKorisnika: imeKorisnika(),
-      boja: bojaKorisnika() 
+      ikona: ikonaKorisnika() 
     }
 
   };
 
-
-  
   constructor(props) {
     super(props);
     // nova veza sa scaledrone-om, slanje podataka o korisniku
@@ -66,14 +58,11 @@ class App extends Component {
     // definicija sobe(room) unutar scaledrone kanala
     const room = this.drone.subscribe("observable-seminarski");
     // postavljanje vrijednosti korisnika(member) npr. member.id, imeKorisnika itd u niz poruka (message)
-    // console.log("Member prije room on: " + JSON.stringify(this.state.member))
     room.on('data', (data, member) => {
       
       const mcopy = this.state.messages;
-      // console.log("Member prije pusha: ", member)
       mcopy.push({member, text: data});
       this.setState({mcopy});
-      // console.log("Member nakon room on: " + JSON.stringify(mcopy))
     });
   }
 
@@ -96,39 +85,22 @@ class App extends Component {
             <h1>React aplikacija za razgovor, Antun Horvat</h1>
          </header> : ""}
          
-         {/* <UnosKorisnika promjenaKorPodataka = {this.promjenaBojeImena}/> */}
-
-          
+          {/* komponente sučelja */}
           <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>
           <Unos saljiPoruku={this.saljiPoruku}/>
           </div>
           )}
     
     saljiPoruku = (message) => { 
-      // this.setState({
-      //   poruke: [...this.state.poruke, 
-      //     {
-      //     imeKorisnika: this.state.member.imeKorisnika,
-      //     boja: this.state.member.boja,
-      //     text: poruka
-      //   }]
-      // });
-
-      // publish na scaledrone servis bazu podataka
-      // console.log("Poruka kod slanja u app komponenti je: " + message);
-      this.drone.publish({room:"observable-seminarski", message})
-      // console.log(this.state.messages)
-      // console.log("korisnik kod slanja: ", this.state.member)
+   
+     // publish na scaledrone servis bazu podataka
+      this.drone.publish(
+        {
+          room:"observable-seminarski", 
+          message
+      }
+      )
     };
-
-    // promjenaBojeImena = (boja, ime) => {
-    //   this.setState({...this.state.member, imeKorisnika:ime, bojaKorisnika:boja})
-    //   console.log(this.state.member);
-    // }
-    
-  
-
- 
  
 }
 

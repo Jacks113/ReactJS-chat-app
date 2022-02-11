@@ -50,12 +50,13 @@ body{
   border-radius: 10px;
 }
 
+/* stilovi za scroll traku ul elementa/liste poruka */
 .spremnikPoruka {
   scrollbar-width: thin;
   scrollbar-color: lightgray #a19a9a; 
 }
 
-/* Works on Chrome, Edge, and Safari */
+
 .spremnikPoruka::-webkit-scrollbar {
   width: 8px;
   background-color: #a19a9a;
@@ -135,9 +136,9 @@ body{
 
 .sadrzaj p{
   display: inline-block;
-  padding: 0.5em;
+  padding: 0.6em;
   min-width: 5ch;
-  border-radius: 2em;
+  border-radius: 1.1em;
   color: whitesmoke;
   /* width: fit-content; */
   max-width: 100%;
@@ -246,6 +247,12 @@ body{
   /* .sadrzaj p{
     font-size: 2em;
   } */
+
+  .spremnikPoruka::-webkit-scrollbar {
+    width: 33px;
+    background-color: #a19a9a;
+    border-radius: 10px;
+}
 }
 
 @media only screen and (max-width: 1200px){
@@ -253,6 +260,9 @@ body{
       height: 5%;
       margin-bottom: 2%;
     }
+
+    .form-Input button {
+      height: 90%;  }
 
     @media only screen and (max-height: 300px){
       .form-Input{
@@ -271,8 +281,6 @@ body{
   body {
     font-size: 1vw;
   }
-  .form-Input button {
-    height: 90%;  }
 }
 
 
@@ -346,6 +354,16 @@ body{
 }
 }
 
+
+@media only screen and (max-width: 200px) {
+  form-Input button{
+    height: 64%;
+    border-radius: 1.5em;
+    }
+    form-Input input{
+      border-radius: 1.5em;
+      }
+}
 
 
 
