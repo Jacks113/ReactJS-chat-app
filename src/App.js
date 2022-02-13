@@ -34,10 +34,9 @@ class App extends Component {
 
   };
 
-  constructor(props) {
-    super(props);
-    // nova veza sa scaledrone-om, slanje podataka o korisniku
-    this.drone = new window.Scaledrone("JXNdHGh1MlDA9xLC", {
+  pozivScaledrone(){
+     // nova veza sa scaledrone-om, slanje podataka o korisniku
+     this.drone = new window.Scaledrone("JXNdHGh1MlDA9xLC", {
       data: this.state.member
     });
 
@@ -64,6 +63,10 @@ class App extends Component {
       mcopy.push({member, text: data});
       this.setState({mcopy});
     });
+  }
+
+  componentDidMount(){
+    this.pozivScaledrone();
   }
 
     render(){
