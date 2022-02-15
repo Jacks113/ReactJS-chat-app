@@ -355,16 +355,16 @@ body{
 }
 }
 
-
-@media only screen and (max-width: 200px) {
+/* 
+@media only screen and (max-width: 300px) {
   form-Input button{
-    height: 64%;
+    height: 75%;
     border-radius: 1.5em;
     }
     form-Input input{
       border-radius: 1.5em;
       }
 }
-
+ */
 
 
