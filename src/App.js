@@ -77,7 +77,6 @@ class App extends Component {
           {/* helmet postavlja vrijednost za meta podatke ili u header html-a i favicon preuzet s font awesome free resursa */}
           <HelmetProvider>
             <Helmet>
-              <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
               <title>React chat aplikacija, seminarski</title>
               <link rel="icon" href="/ikone-korisnika/poruka-favicon-fontawesome.svg" sizes="any" type="image/svg+xml"/>
             </Helmet> 
