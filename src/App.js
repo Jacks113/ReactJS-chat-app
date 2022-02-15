@@ -7,7 +7,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ListaPoruka from './Komponente/ListaPoruka';
 import Unos from './Komponente/Unos';
 
-// definicija funkcije za postavljanje nasumicnog izbora korisnickog imena, vrijednosti preuzete sa scaledrone tutorial-a
+// definicija funkcije za postavljanje nasumicnog izbora korisnickog imena, vrijednosti imena preuzete sa scaledrone tutorial-a
 function imeKorisnika(){
   const pridjevi = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
   
@@ -86,9 +86,9 @@ class App extends Component {
 
          
 
-          { this.state.member.imeKorisnika ? <header className="App-header"> 
+          <header className="App-header"> 
             <h1>React aplikacija za razgovor, seminarski Antun Horvat</h1>
-         </header> : ""}
+         </header> 
          
           {/* komponente sučelja */}
           <ListaPoruka korisnik={this.state.member} poruke={this.state.messages}/>

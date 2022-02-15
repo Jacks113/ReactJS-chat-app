@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function Unos (props){
+    
     // postavljanje stanja za poruke i definiranje funkcije za slanje poruke iz props-a
     const { saljiPoruku } = props;
     const [ tekstPoruke, setTekstPoruke ] = useState("");

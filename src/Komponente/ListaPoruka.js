@@ -10,8 +10,7 @@ class ListaPoruka extends Component{
     scrollToBottom = () => {
         if (this.messagesEnd !== ""  && this.messagesEnd !== undefined){
             this.messagesEnd.scrollIntoView({ behavior: "smooth" });
-        }
-            	
+        }      	
       }
       
     //  scroll do zadnjeg elementa nakon mounta ove komponente(lista poruka)
@@ -23,12 +22,11 @@ class ListaPoruka extends Component{
       componentDidUpdate() {
         this.scrollToBottom();
       }
+
     render(){ 
         
         // definiranje vrijednosti stanja poruke, korisnika iz props-a
         const { poruke, korisnik } = this.props;
-
-        
 
         return(
             <ul className="spremnikPoruka">
