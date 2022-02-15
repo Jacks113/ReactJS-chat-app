@@ -74,11 +74,12 @@ class App extends Component {
 
       return (
         <div className="App">
-          {/* helmet postavlja vrijednost za meta podatke ili u header html-a */}
+          {/* helmet postavlja vrijednost za meta podatke ili u header html-a i favicon preuzet s font awesome free resursa */}
           <HelmetProvider>
             <Helmet>
               <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-              <title>React chat aplikacija, seminarski Antun Horvat</title>
+              <title>React chat aplikacija, seminarski</title>
+              <link rel="icon" href="/ikone-korisnika/poruka-favicon-fontawesome.svg" sizes="any" type="image/svg+xml"/>
             </Helmet> 
           </HelmetProvider>
 
@@ -86,7 +87,7 @@ class App extends Component {
          
 
           { this.state.member.imeKorisnika ? <header className="App-header"> 
-            <h1>React aplikacija za razgovor, Antun Horvat</h1>
+            <h1>React aplikacija za razgovor, seminarski Antun Horvat</h1>
          </header> : ""}
          
           {/* komponente sučelja */}
