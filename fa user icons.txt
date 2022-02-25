@@ -1,0 +1,11 @@
+<FontAwesomeIcon icon="fa-solid fa-user-crown" />
+<FontAwesomeIcon icon="fa-solid fa-user-cowboy" />
+<FontAwesomeIcon icon="fa-solid fa-user-chef" />
+<FontAwesomeIcon icon="fa-solid fa-user-bounty-hunter" />
+<FontAwesomeIcon icon="fa-solid fa-user-astronaut" />
+<FontAwesomeIcon icon="fa-solid fa-user-alien" />
+
+
+npm install --save font-awesome
+npm i --save @fortawesome/fontawesome-svg-core@next
+@fortawesome/free-regular-svg-icons@next 
